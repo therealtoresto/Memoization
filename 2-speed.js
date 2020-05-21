@@ -34,3 +34,6 @@ const speedTest = (name, fn, args, count) => {
 const fib = n => (n <= 2 ? 1 : fib(n -1) + fib(n - 2));
 
 speedTest('fib(20)', fib, [20], LOOP_COUNT);
+
+const mFib = memoize(fib);
+speedTest('memoized fib', mFib, [20], LOOP_COUNT)
